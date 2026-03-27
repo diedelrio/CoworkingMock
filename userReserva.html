@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coworking Sinergia</title>
+    <link rel="stylesheet" href="./css/b2c.css">
+    <script src="https://cdn.tailwindcss.com"></script> 
+</head>
+<body>
+    <nav class="navigation hidden md:flex" id="mainNav">
+        <div class="flex items-center gap-3 mb-8 px-2 overflow-hidden">
+            <img src="img/logoCoworking.png" alt="Logo" class="h-8 w-8 flex-shrink-0 object-contain">
+            <span class="text-xl font-bold tracking-tighter">Coworking <span class="text-indigo-600">Sinergia</span></span>
+        </div>
+
+        <a href="#" class="nav-link active">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path></svg>
+            <span>Inicio</span>
+        </a>
+        <a href="userReserva.html" class="nav-link">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M12 4.5v15m7.5-7.5h-15"></path> /path></svg>
+            <span>Reservar</span>
+        </a>
+        <a href="#" class="nav-link">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path> /path></svg>
+            <span>Mis Reservas</span>
+        </a>
+        <a href="#" class="nav-link">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path> /path></svg>
+            <span>Perfil</span>
+        </a>
+
+        <div class="mt-auto hidden md:flex items-center gap-3 p-2 border-t border-slate-100 pt-4">
+            <img src="https://ui-avatars.com/api/?name=Diego+del+Rio" class="w-8 h-8 rounded-full">
+            <div class="text-xs">
+                <p class="font-bold">Diego del Rio</p>
+                <p class="text-slate-400">Cliente</p>
+            </div>
+        </div>
+    </nav>
+    <nav class="nav-tab-mobile md:hidden">
+        <a href="indexUser.html" class="tab-item active">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path></svg>
+            <span>Inicio</span>
+        </a>
+        <a href="userReserva.html" class="tab-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.5v15m7.5-7.5h-15"></path></svg>
+            <span>Reservar</span>
+        </a>
+        <a href="#" class="tab-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            <span>Reservas</span>
+        </a>
+        <a href="#" class="tab-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            <span>Perfil</span>
+        </a>
+    </nav>
+    <main class="flex-1 main-content p-6 md:p-10">
+        
+        <header class="flex flex-col md:flex-row md:items-center justify-between gap-4  border-slate-100 pb-6">
+            <div>
+                <a href="indexUser.html" class="text-xs text-indigo-600 font-semibold hover:underline flex items-center gap-1.5 mb-2">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Volver al listado
+                </a>
+                <h1 class="text-3xl font-bold text-slate-950 tracking-tighter">Nueva Reserva (Admin)</h1>
+                <p class="text-slate-500 mt-1">Crear una nueva reserva de espacio para un cliente.</p>
+            </div>
+        </header>
+
+        <form class="space-y-8 max-w-5xl">
+            
+            <section class="glass-card p-6 md:p-8">
+                <h3 class="text-lg font-semibold mb-6 flex items-center gap-3 text-slate-950">
+                    <span class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-sm">1</span>
+                    Detalles de la Reserva
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="md:col-span-2">
+                        <label class="form-label">Usuario (CLIENT) *</label>
+                        <div class="flex gap-3 mt-1.5">
+                            <select class="form-input flex-1">
+                                <option>Seleccioná un usuario</option>
+                                <option>Carlos User (carlos@email.com)</option>
+                                <option>Jane Doe (jane@email.com)</option>
+                            </select>
+                            <button type="button" class="btn-secondary text-indigo-600 border-indigo-200 hover:bg-indigo-50 hover:border-indigo-300 px-4 flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                Nuevo usuario
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-2 relative">
+                        <label class="form-label">Espacio *</label>
+                        <select class="form-input mt-1.5 h-12">
+                            <option>SALA SINERGIA - 2 persona(s)</option>
+                            <option>Flex Desk - Puesto 04</option>
+                            <option>Oficina Privada 101</option>
+                        </select>
+                        <div class="mt-3 p-4 bg-slate-50 rounded-xl border border-slate-100 text-xs text-slate-600 space-y-2">
+                            <p class="flex items-center gap-2 font-medium text-slate-800">
+                                <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                Capacidad: <span class="font-bold text-slate-950 ml-1">2 personas</span>
+                            </p>
+                            <p>Tarifas: $15 h/día. $65 h/hora. <a href="#" class="text-indigo-600 hover:underline font-medium ml-1">Ver bonos y planes</a></p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Fecha *</label>
+                        <input type="date" class="form-input mt-1.5" value="2026-03-27">
+                    </div>
+
+                    <div>
+                        <label class="form-label">Tipo de Jornada</label>
+                        <div class="flex gap-2 mt-1.5 bg-slate-100 p-1 rounded-xl">
+                            <button type="button" class="flex-1 py-2 px-3 rounded-lg text-sm font-semibold bg-white text-indigo-700 shadow-sm">Manual</button>
+                            <button type="button" class="flex-1 py-2 px-3 rounded-lg text-sm font-medium text-slate-600 hover:bg-white/50 transition">Medio día</button>
+                            <button type="button" class="flex-1 py-2 px-3 rounded-lg text-sm font-medium text-slate-600 hover:bg-white/50 transition">Día completo</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Hora de Inicio *</label>
+                        <input type="time" class="form-input mt-1.5" value="09:00">
+                    </div>
+
+                    <div>
+                        <label class="form-label">Hora de Fin *</label>
+                        <input type="time" class="form-input mt-1.5" value="10:00">
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card p-6 md:p-8 border-l-4 border-indigo-400 shadow-lg shadow-indigo-50">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold flex items-center gap-3 text-slate-950">
+                        <span class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-sm">2</span>
+                        Haz recurrente tu reserva
+                    </h3>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="recurrenceToggle" class="sr-only peer" onchange="toggleRecurrence()">
+                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                    </label>
+                </div>
+                
+                <div id="recurrenceFields" class="space-y-6 hidden border-t border-slate-100 pt-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="form-label">Repetir</label>
+                            <select class="form-input mt-1.5">
+                                <option>Mismo día todas las semanas</option>
+                                <option>Diario</option>
+                                <option>Mismo día todos los meses</option>
+                            </select>
+                        </div>
+
+                        <div class="md:row-span-2">
+                            <label class="form-label">Regla de fin</label>
+                            <div class="space-y-3 mt-1.5">
+                                <label class="flex items-center gap-3 p-4 bg-white border border-slate-100 rounded-xl cursor-pointer hover:border-indigo-100 transition">
+                                    <input type="radio" name="endRule" class="form-radio text-indigo-600 h-5 w-5 border-slate-200" checked>
+                                    <span class="text-sm font-medium text-slate-700">Hasta una fecha</span>
+                                    <input type="date" class="form-input ml-auto w-40 text-xs" value="2026-04-27">
+                                </label>
+                                <label class="flex items-center gap-3 p-4 bg-white border border-slate-100 rounded-xl cursor-pointer hover:border-indigo-100 transition">
+                                    <input type="radio" name="endRule" class="form-radio text-indigo-600 h-5 w-5 border-slate-200">
+                                    <span class="text-sm font-medium text-slate-700">Cantidad de ocurrencias</span>
+                                    <input type="number" class="form-input ml-auto w-24 text-xs" placeholder="4">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-indigo-50 rounded-2xl border border-indigo-100 text-sm text-indigo-950">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div><p class="text-xs text-indigo-600 font-medium">Patrón</p><p class="font-semibold mt-1">Semanas (Viernes)</p></div>
+                            <div><p class="text-xs text-indigo-600 font-medium">Inicio</p><p class="font-semibold mt-1">2026-03-27</p></div>
+                            <div><p class="text-xs text-indigo-600 font-medium">Fin</p><p class="font-semibold mt-1">hasta 2026-04-27</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card p-6 md:p-8 space-y-6">
+                
+                <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100 text-sm flex items-center gap-3 font-medium text-emerald-900">
+                    <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Duración calculada: <span class="font-bold text-slate-950">1 hora</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label">Número de Asistentes</label>
+                        <input type="number" class="form-input mt-1.5" placeholder="1" value="1">
+                        <p class="text-[11px] text-slate-400 mt-1.5 px-1">En espacios compartidos indica cuántos asistentes ocupan cupo.</p>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Propósito / Motivo</label>
+                        <input type="text" class="form-input mt-1.5" placeholder="ej. Reunión de equipo, Presentación a cliente">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="form-label">Notas Adicionales</label>
+                        <textarea class="form-input mt-1.5 h-32 resize-none" placeholder="Algún requerimiento especial o nota..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="flex justify-end gap-3 pt-6 border-t border-slate-100">
+                <button type="button" class="btn-secondary px-6">Cancelar</button>
+                <button type="submit" class="btn-primary px-10 shadow-lg shadow-indigo-100">Crear Reserva</button>
+            </div>
+        </form>
+
+    </main>
+    <script src="./js/main.js"></script>
+        <script>
+        // Función específica para este formulario: Mostrar/Ocultar Recurrencia
+        function toggleRecurrence() {
+            const toggle = document.getElementById('recurrenceToggle');
+            const fields = document.getElementById('recurrenceFields');
+            if (toggle.checked) {
+                fields.classList.remove('hidden');
+                // Pequeña animación de entrada
+                fields.classList.add('animate-fade-in'); 
+            } else {
+                fields.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

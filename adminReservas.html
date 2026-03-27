@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coworking Sinergia</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script> </head>
+<body class="flex">
+    <div class="md:hidden bg-white border-b p-4 flex justify-between items-center sticky top-0 z-[110]">
+        <div class="flex items-center gap-2">
+            <img src="img/logoCoworking.png" alt="Logo" class="h-6 w-6 object-contain">
+            <span class="text-xl font-bold tracking-tighter">Coworking <span class="text-indigo-600">Sinergia</span></span>
+        </div>
+        <button id="menuBtn" class="p-2 text-slate-600 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="sideOverly" class="fixed inset-0 bg-black/50 z-[105] hidden md:hidden"></div>
+
+    <nav class="navigation" id="mainNav">
+        
+        <div class="flex items-center gap-3 mb-8 px-2 overflow-hidden">
+            <img src="img/logoCoworking.png" alt="Logo" class="h-8 w-8 flex-shrink-0 object-contain">
+            <span class="text-xl font-bold tracking-tighter">Coworking <span class="text-indigo-600">Sinergia</span></span>
+        </div>
+        
+    </div>
+        <a href="appIndexAdmin.html" class="nav-link active">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            <span>Dashboard</span>
+        </a>
+
+        <div class="w-full">
+            <button class="nav-link w-full" onclick="toggleSub(this)">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span>Reservas</span>
+            </button>
+            <div class="nav-sub "> <a href="adminReservas.html" class="nav-sub-link">Nueva</a>
+                <a href="#" class="nav-sub-link">Pendientes</a>
+                <a href="#" class="nav-sub-link">Ver todas</a>
+            </div>
+        </div>
+
+        <div class="w-full">
+            <button class="nav-link w-full" onclick="toggleSub(this)">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <span>Usuarios</span>
+            </button>
+            <div class="nav-sub">
+                <a href="#" class="nav-sub-link">Crear Nuevo</a>
+                <a href="#" class="nav-sub-link">Clasificar</a>
+                <a href="#" class="nav-sub-link">Editar</a>
+                <a href="#" class="nav-sub-link">Alta Masiva</a>
+                <a href="#" class="nav-sub-link">Regenerar tokens</a>
+            </div>
+        </div>
+
+        <div class="w-full">
+            <button class="nav-link w-full" onclick="toggleSub(this)">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                <span>Liquidaciones</span>
+            </button>
+            <div class="nav-sub">
+                <a href="#" class="nav-sub-link">Consulta</a>
+                <a href="#" class="nav-sub-link">Generar</a>
+            </div>
+        </div>
+
+        <a href="#" class="nav-link">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"></path> /path></svg>
+            <span>Envio de Mails</span>
+        </a>
+        <a href="#" class="nav-link">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"></path> /path></svg>
+            <span>Cierres de Oficina</span>
+        </a>
+
+        <a href="#" class="nav-link">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M3 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811V8.69ZM12.75 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061a1.125 1.125 0 0 1-1.683-.977V8.69Z"></path> /path></svg>
+            <span>Proceso</span>
+        </a>
+
+        <div class="w-full">
+            <button class="nav-link w-full" onclick="toggleSub(this)">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z"></path></svg>
+                <span>Configuración</span>
+            </button>
+            <div class="nav-sub">
+                <a href="#" class="nav-sub-link">Espacios</a>
+                <a href="#" class="nav-sub-link">Reglas de Negocio</a>
+                <a href="#" class="nav-sub-link">Plantillas de Email</a>
+            </div>
+        </div>     
+
+        <div class="mt-auto hidden md:flex items-center gap-3 p-2 border-t border-slate-100 pt-4">
+            <img src="https://ui-avatars.com/api/?name=Admin" class="w-8 h-8 rounded-full">
+            <div class="text-xs">
+                <p class="font-bold">Admin Nexus</p>
+                <p class="text-slate-400">Super Admin</p>
+            </div>
+        </div>
+    </nav>
+
+<main class="flex-1 main-content p-6 md:p-10">
+        
+        <header class="flex flex-col md:flex-row md:items-center justify-between gap-4  border-slate-100 pb-6">
+            <div>
+                <a href="appIndexAdmin.html" class="text-xs text-indigo-600 font-semibold hover:underline flex items-center gap-1.5 mb-2">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Volver al listado
+                </a>
+                <h1 class="text-3xl font-bold text-slate-950 tracking-tighter">Nueva Reserva (Admin)</h1>
+                <p class="text-slate-500 mt-1">Crear una nueva reserva de espacio para un cliente.</p>
+            </div>
+        </header>
+
+        <form class="space-y-8 max-w-5xl">
+            
+            <section class="glass-card p-6 md:p-8">
+                <h3 class="text-lg font-semibold mb-6 flex items-center gap-3 text-slate-950">
+                    <span class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-sm">1</span>
+                    Detalles de la Reserva
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="md:col-span-2">
+                        <label class="form-label">Usuario (CLIENT) *</label>
+                        <div class="flex gap-3 mt-1.5">
+                            <select class="form-input flex-1">
+                                <option>Seleccioná un usuario</option>
+                                <option>Carlos User (carlos@email.com)</option>
+                                <option>Jane Doe (jane@email.com)</option>
+                            </select>
+                            <button type="button" class="btn-secondary text-indigo-600 border-indigo-200 hover:bg-indigo-50 hover:border-indigo-300 px-4 flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                Nuevo usuario
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-2 relative">
+                        <label class="form-label">Espacio *</label>
+                        <select class="form-input mt-1.5 h-12">
+                            <option>SALA SINERGIA - 2 persona(s)</option>
+                            <option>Flex Desk - Puesto 04</option>
+                            <option>Oficina Privada 101</option>
+                        </select>
+                        <div class="mt-3 p-4 bg-slate-50 rounded-xl border border-slate-100 text-xs text-slate-600 space-y-2">
+                            <p class="flex items-center gap-2 font-medium text-slate-800">
+                                <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                Capacidad: <span class="font-bold text-slate-950 ml-1">2 personas</span>
+                            </p>
+                            <p>Tarifas: $15 h/día. $65 h/hora. <a href="#" class="text-indigo-600 hover:underline font-medium ml-1">Ver bonos y planes</a></p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Fecha *</label>
+                        <input type="date" class="form-input mt-1.5" value="2026-03-27">
+                    </div>
+
+                    <div>
+                        <label class="form-label">Tipo de Jornada</label>
+                        <div class="flex gap-2 mt-1.5 bg-slate-100 p-1 rounded-xl">
+                            <button type="button" class="flex-1 py-2 px-3 rounded-lg text-sm font-semibold bg-white text-indigo-700 shadow-sm">Manual</button>
+                            <button type="button" class="flex-1 py-2 px-3 rounded-lg text-sm font-medium text-slate-600 hover:bg-white/50 transition">Medio día</button>
+                            <button type="button" class="flex-1 py-2 px-3 rounded-lg text-sm font-medium text-slate-600 hover:bg-white/50 transition">Día completo</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Hora de Inicio *</label>
+                        <input type="time" class="form-input mt-1.5" value="09:00">
+                    </div>
+
+                    <div>
+                        <label class="form-label">Hora de Fin *</label>
+                        <input type="time" class="form-input mt-1.5" value="10:00">
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card p-6 md:p-8 border-l-4 border-indigo-400 shadow-lg shadow-indigo-50">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold flex items-center gap-3 text-slate-950">
+                        <span class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-sm">2</span>
+                        Haz recurrente tu reserva
+                    </h3>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="recurrenceToggle" class="sr-only peer" onchange="toggleRecurrence()">
+                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                    </label>
+                </div>
+                
+                <div id="recurrenceFields" class="space-y-6 hidden border-t border-slate-100 pt-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="form-label">Repetir</label>
+                            <select class="form-input mt-1.5">
+                                <option>Mismo día todas las semanas</option>
+                                <option>Diario</option>
+                                <option>Mismo día todos los meses</option>
+                            </select>
+                        </div>
+
+                        <div class="md:row-span-2">
+                            <label class="form-label">Regla de fin</label>
+                            <div class="space-y-3 mt-1.5">
+                                <label class="flex items-center gap-3 p-4 bg-white border border-slate-100 rounded-xl cursor-pointer hover:border-indigo-100 transition">
+                                    <input type="radio" name="endRule" class="form-radio text-indigo-600 h-5 w-5 border-slate-200" checked>
+                                    <span class="text-sm font-medium text-slate-700">Hasta una fecha</span>
+                                    <input type="date" class="form-input ml-auto w-40 text-xs" value="2026-04-27">
+                                </label>
+                                <label class="flex items-center gap-3 p-4 bg-white border border-slate-100 rounded-xl cursor-pointer hover:border-indigo-100 transition">
+                                    <input type="radio" name="endRule" class="form-radio text-indigo-600 h-5 w-5 border-slate-200">
+                                    <span class="text-sm font-medium text-slate-700">Cantidad de ocurrencias</span>
+                                    <input type="number" class="form-input ml-auto w-24 text-xs" placeholder="4">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-indigo-50 rounded-2xl border border-indigo-100 text-sm text-indigo-950">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div><p class="text-xs text-indigo-600 font-medium">Patrón</p><p class="font-semibold mt-1">Semanas (Viernes)</p></div>
+                            <div><p class="text-xs text-indigo-600 font-medium">Inicio</p><p class="font-semibold mt-1">2026-03-27</p></div>
+                            <div><p class="text-xs text-indigo-600 font-medium">Fin</p><p class="font-semibold mt-1">hasta 2026-04-27</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card p-6 md:p-8 space-y-6">
+                
+                <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100 text-sm flex items-center gap-3 font-medium text-emerald-900">
+                    <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Duración calculada: <span class="font-bold text-slate-950">1 hora</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label">Número de Asistentes</label>
+                        <input type="number" class="form-input mt-1.5" placeholder="1" value="1">
+                        <p class="text-[11px] text-slate-400 mt-1.5 px-1">En espacios compartidos indica cuántos asistentes ocupan cupo.</p>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Propósito / Motivo</label>
+                        <input type="text" class="form-input mt-1.5" placeholder="ej. Reunión de equipo, Presentación a cliente">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="form-label">Notas Adicionales</label>
+                        <textarea class="form-input mt-1.5 h-32 resize-none" placeholder="Algún requerimiento especial o nota..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="flex justify-end gap-3 pt-6 border-t border-slate-100">
+                <button type="button" class="btn-secondary px-6">Cancelar</button>
+                <button type="submit" class="btn-primary px-10 shadow-lg shadow-indigo-100">Crear Reserva</button>
+            </div>
+        </form>
+
+    </main>
+
+    <script src="./js/main.js"></script>
+        <script>
+        // Función específica para este formulario: Mostrar/Ocultar Recurrencia
+        function toggleRecurrence() {
+            const toggle = document.getElementById('recurrenceToggle');
+            const fields = document.getElementById('recurrenceFields');
+            if (toggle.checked) {
+                fields.classList.remove('hidden');
+                // Pequeña animación de entrada
+                fields.classList.add('animate-fade-in'); 
+            } else {
+                fields.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
